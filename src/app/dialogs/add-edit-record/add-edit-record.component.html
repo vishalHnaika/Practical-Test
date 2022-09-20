@@ -1,0 +1,47 @@
+<div>
+    <h3 mat-dialog-title>Add new Issue</h3>
+
+    <form class="mat-dialog-content" [formGroup]="myForm">
+
+        <div class="form">
+            <mat-form-field appearance="outline" color="accent" class="w-100">
+                <input matInput class="form-control" placeholder="Id" formControlName="id" required>
+                <mat-error *ngIf="myForm.get('id')?.hasError('required')">
+                    Id is required.
+                </mat-error>
+                <!-- <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error> -->
+            </mat-form-field>
+        </div>
+
+        <!--Textarea for demo purposes-->
+        <div class="form">
+            <mat-form-field appearance="outline" color="accent" class="w-100">
+                <textarea matInput formControlName="title" class="form-control" placeholder="Title" required></textarea>
+                <mat-error *ngIf="myForm.get('title')?.hasError('required')">Title is required.</mat-error>
+            </mat-form-field>
+        </div>
+
+        <!--Contains mat-hint for characters count and has maxLengt set-->
+        <div class="form">
+            <mat-form-field appearance="outline" color="accent" class="w-100">
+                <input matInput formControlName="state" class="form-control" placeholder="State" maxlength="10"
+                    required>
+                <mat-error *ngIf="myForm.get('state')?.hasError('required')">Sstate is required.</mat-error>
+
+                <!-- <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error> -->
+                <!-- <mat-hint align="end">{{inputstate.value?.length || 0}}/10</mat-hint> -->
+            </mat-form-field>
+        </div>
+
+        <div class="form">
+            <mat-form-field appearance="outline" color="accent" class="w-100">
+                <input matInput placeholder="Url" formControlName="url">
+            </mat-form-field>
+        </div>
+
+        <div mat-dialog-actions>
+            <button mat-button type="submit" (click)="submitData()">Save</button>
+            <button mat-button mat-dialog-close>Cancel</button>
+        </div>
+    </form>
+</div>
