@@ -13,6 +13,10 @@ export class DataService {
 
   constructor(private httpClient: HttpClient) { }
 
+  /**
+   * Get all REST API data 
+   * @returns 
+   */
   getAllIssues(): Observable<any> {
     return this.httpClient.get(this.API_URL).pipe(
       tap((res: any) => {
