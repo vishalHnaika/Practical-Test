@@ -9,7 +9,6 @@
                 <mat-error *ngIf="myForm.get('id')?.hasError('required')">
                     Id is required.
                 </mat-error>
-                <!-- <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error> -->
             </mat-form-field>
         </div>
 
@@ -27,8 +26,6 @@
                 <input matInput formControlName="state" class="form-control" placeholder="State" maxlength="10"
                     required>
                 <mat-error *ngIf="myForm.get('state')?.hasError('required')">State is required.</mat-error>
-                <!-- <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error> -->
-                <!-- <mat-hint align="end">{{inputstate.value?.length || 0}}/10</mat-hint> -->
             </mat-form-field>
         </div>
 
