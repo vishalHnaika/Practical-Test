@@ -1,11 +1,14 @@
 <div class="list-section">
+
   <mat-form-field appearance="outline" class="search-box">
-    <mat-label>Search....</mat-label>
+    <mat-label>Search..</mat-label>
     <input matInput (keyup)="applyFilter($event)" placeholder="Search" #input>
   </mat-form-field>
+
   <button mat-raised-button color="accent" class="add-btn" (click)="addEditRecordDialog();">
     Add
   </button>
+  
   <table #mytable mat-table [dataSource]="dataSource" class="mat-elevation-z8 w-100">
 
     <!-- Title Column -->
@@ -45,5 +48,7 @@
     <tr class="mat-row" *matNoDataRow>
       <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
     </tr>
+
   </table>
+
 </div>
